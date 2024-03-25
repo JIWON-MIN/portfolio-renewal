@@ -1,0 +1,75 @@
+.opening {
+  position: absolute;
+  bottom: 0;
+
+  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  animation-name: slideFromBottom;
+  animation-delay: 4s;
+  animation-duration: 2s;
+  animation-duration: leaner;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+
+  @keyframes slideFromBottom {
+    0% {
+      bottom: 0;
+    }
+    100% {
+      bottom: 100vh;
+    }
+  }
+
+  .text {
+    text-align: center;
+  }
+
+  .animationBox {
+    position: absolute;
+    top: 0;
+    width: 50vw;
+    height: 100vh;
+    mix-blend-mode: difference;
+
+    animation-duration: 2s;
+    animation-duration: leaner;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+
+    &.left {
+      background-color: white;
+      animation-name: slideFromLeft;
+    }
+
+    &.right {
+      background-color: white;
+      animation-name: slideFromRight;
+    }
+
+    @keyframes slideFromLeft {
+      0% {
+        left: -50vw;
+      }
+      100% {
+        left: 0;
+      }
+    }
+
+    @keyframes slideFromRight {
+      0% {
+        right: -50vw;
+      }
+      100% {
+        right: 0;
+      }
+    }
+  }
+}
