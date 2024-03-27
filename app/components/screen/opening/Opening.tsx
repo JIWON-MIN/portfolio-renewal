@@ -6,7 +6,7 @@ export default function Opening() {
   return (
     <div className={styles.opening}>
       <div className={styles.text}>
-        <Typo variant="t2" color="black" style={{ lineHeight: "40px" }}>
+        <Typo variant="t3" color="black" style={{ lineHeight: "40px" }}>
           Welcome to My Portfoilo!
           <br />
           I’m Frontend Developer MIN JI WON.
