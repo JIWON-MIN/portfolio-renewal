@@ -16,10 +16,10 @@ const Arrows = () => {
 
 export default function Landing() {
   return (
-    <div className={styles.landing}>
+    <div className={styles.landing} id="landing">
       <LandingNav />
       <div className={styles.background}>
-        <Image src={BusanJpeg} alt="busan" layout="fill" objectFit="cover" />
+        <Image src={BusanJpeg} alt="busan" fill style={{ objectFit: "cover" }} />
         <div className={styles.overlay} />
         <Typo variant="h3" color="white" className={styles.text}>
           학습과 응용을 사랑하는
