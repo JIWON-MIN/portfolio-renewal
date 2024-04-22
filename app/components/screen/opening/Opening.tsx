@@ -10,11 +10,17 @@ export default function Opening() {
     document.body.style.position = "relative";
     document.body.style.overflow = "hidden";
     document.body.style.height = "100vh";
+    document.body.style.width = "100vw";
+
+    setTimeout(() => {
+      document.body.style.width = "1440px";
+    }, 2000);
 
     setTimeout(() => {
       document.body.style.position = "static";
       document.body.style.overflow = "unset";
       document.body.style.height = "unset";
+      document.body.style.width = "1440px";
     }, 6000);
   }, []);
 

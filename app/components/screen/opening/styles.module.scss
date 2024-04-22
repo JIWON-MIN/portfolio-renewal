@@ -1,5 +1,6 @@
 .opening {
-  position: absolute;
+  position: fixed;
+  left: 0;
   bottom: 0;
   z-index: 999;
 
@@ -14,7 +15,6 @@
   animation-name: slideFromBottom;
   animation-delay: 4s;
   animation-duration: 2s;
-  animation-duration: leaner;
   animation-iteration-count: 1;
   animation-direction: alternate;
   animation-fill-mode: forwards;
@@ -35,7 +35,7 @@
   .animationBox {
     position: absolute;
     top: 0;
-    width: 50vw;
+    width: 50%;
     height: 100vh;
     mix-blend-mode: difference;
 
@@ -57,7 +57,7 @@
 
     @keyframes slideFromLeft {
       0% {
-        left: -50vw;
+        left: -50%;
       }
       100% {
         left: 0;
@@ -66,7 +66,7 @@
 
     @keyframes slideFromRight {
       0% {
-        right: -50vw;
+        right: -50%;
       }
       100% {
         right: 0;

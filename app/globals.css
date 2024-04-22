@@ -14,14 +14,15 @@
 
 html,
 body {
-  max-width: 100vw;
   overflow-x: scroll;
-  margin: 0;
   background-color: black;
 }
 
 body {
+  width: 1440px;
+  margin: 0 auto;
   color: white;
+  position: relative;
 }
 
 a {
