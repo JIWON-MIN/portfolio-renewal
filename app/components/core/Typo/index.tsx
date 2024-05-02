@@ -1,16 +1,15 @@
-import { ReactElement } from "react";
-
 interface TypoProps {
   variant?: string;
   color?: string;
   display?: "box" | "inline";
   style?: object;
   className?: string;
+  bold?: boolean;
   children: React.ReactNode;
 }
 
 export default function Typo(props: TypoProps) {
-  const { variant = "t2", color = "black", display = "inline", style, className, children } = props;
+  const { variant = "t2", color = "black", display = "inline", style, bold, className, children } = props;
   // 18 24 30 36
   // 48 60 120
   const renderSize = (variant: string) => {
@@ -52,6 +51,8 @@ export default function Typo(props: TypoProps) {
         display: display === "inline" ? "block" : "inline",
         fontSize: renderSize(variant),
         color: renderColor(color),
+        fontWeight: bold ? "700" : "400",
+        lineHeight: 1.5,
         ...style,
       }}
       className={className}

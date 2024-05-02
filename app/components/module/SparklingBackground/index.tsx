@@ -11,7 +11,7 @@ interface SparklingBackgroundProps {
 
 export default function SparklingBackground({ children }: SparklingBackgroundProps) {
   const drawStars = () => {
-    const tmpStar = document.createElement("figure");
+    const tmpStar = document.createElement("div");
     tmpStar.className = styles.star + " " + "star";
     tmpStar.style.top = 100 * Math.random() + "%";
     tmpStar.style.left = 100 * Math.random() + "%";
