@@ -21,7 +21,11 @@ export default function MenuBar({ hideIcon = false }: MenuBarProps) {
       {!hideIcon && <Image src={MJWSVG} alt="mjw" />}
       <div className={styles.bar}>
         {MENU_EL.map((el) => {
-          return <div className={styles.el}>{el.title}</div>;
+          return (
+            <div className={styles.el} key={el.title}>
+              {el.title}
+            </div>
+          );
         })}
       </div>
     </div>

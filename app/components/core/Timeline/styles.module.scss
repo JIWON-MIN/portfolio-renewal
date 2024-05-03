@@ -1,0 +1,29 @@
+.timeline {
+  max-width: 920px;
+}
+
+.contentEl {
+  display: flex;
+
+  .date {
+    width: 240px;
+  }
+  .text {
+    margin: 6px 0 12px;
+    .sub {
+      margin: 2px 0 10px;
+    }
+    .desc {
+      display: flex;
+      margin-bottom: 8px;
+      &:before {
+        content: "•";
+        line-height: 24px;
+        align-self: baseline;
+        font-size: 18px;
+        color: inherit;
+        margin-right: 6px;
+      }
+    }
+  }
+}

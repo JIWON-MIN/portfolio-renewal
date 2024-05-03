@@ -2,10 +2,11 @@ import Image from "next/image";
 import Typo from "../../core/Typo";
 import styles from "./styles.module.scss";
 import MJW from "../../assets/mjw_202404.jpeg";
+import ContentSection from "../../module/ContentSection";
 
 export default function About() {
   return (
-    <div className={styles.about}>
+    <ContentSection className={styles.about}>
       <div className={styles.textBox}>
         <Typo variant="60px" bold color="white">
           ABOUT ME
@@ -27,6 +28,6 @@ export default function About() {
         </Typo>
       </div>
       <Image src={MJW} width={300} alt="mjw" />
-    </div>
+    </ContentSection>
   );
 }
