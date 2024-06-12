@@ -1,5 +1,6 @@
 import Timeline from "../../core/Timeline";
 import ContentSection from "../../module/ContentSection";
+import styles from "./styles.module.scss";
 
 const TIMELINE_CONTENTS = [
   { date: "2019.07 ~ 2022.08", title: "에듀플렉스 인천삼산점", desc: "중 · 고등학생 영어 · 수학 강의" },
@@ -22,7 +23,7 @@ const TIMELINE_CONTENTS = [
 
 export default function Career() {
   return (
-    <ContentSection title="CAREER">
+    <ContentSection title="CAREER" className={styles.career}>
       <Timeline contents={TIMELINE_CONTENTS} />
     </ContentSection>
   );

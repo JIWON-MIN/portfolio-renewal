@@ -1,9 +1,10 @@
 import Typo from "../../core/Typo";
 import ContentSection from "../../module/ContentSection";
+import styles from "./styles.module.scss";
 
 export default function Strength() {
   return (
-    <ContentSection title="MY GOAL">
+    <ContentSection title="MY STRENGTH" className={styles.strength}>
       <Typo variant="t3" color="white" style={{ lineHeight: 2 }}>
         저의 MBTI인 ISTJ는 강한 집중력과 책임감, 신중한 일처리의 특징을 가지며,
         <br />

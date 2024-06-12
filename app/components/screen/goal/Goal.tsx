@@ -1,9 +1,10 @@
 import Typo from "../../core/Typo";
 import ContentSection from "../../module/ContentSection";
+import styles from "./styles.module.scss";
 
 export default function Goal() {
   return (
-    <ContentSection title="MY STRENGTH">
+    <ContentSection title="MY GOAL" className={styles.goal}>
       <Typo variant="t3" color="white" style={{ lineHeight: 2 }}>
         현재로서는 지속적 학습과 발전을 통해 더욱 능력 있는 프론트엔드 개발자로 성장하는 것이 저의 목표입니다.
         <br />
