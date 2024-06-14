@@ -105,7 +105,7 @@ export default function Works() {
     <div>
       <WorksOpening />
       {WORK_LIST.map((work) => (
-        <Work work={work} />
+        <Work work={work} key={work.title} />
       ))}
     </div>
   );

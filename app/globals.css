@@ -14,7 +14,7 @@
 
 html,
 body {
-  overflow-x: scroll;
+  /* overflow-x: scroll; */
   background-color: black;
   color: white;
   margin: 0;

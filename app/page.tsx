@@ -6,7 +6,7 @@ import Career from "./components/screen/career/Career";
 import Strength from "./components/screen/strength/Strength";
 import Goal from "./components/screen/goal/Goal";
 import Works from "./components/screen/works/Works";
-import Contact from "./components/screen/contact/contact";
+import ContactSizingUp from "./components/screen/contact/ContactSizingUp";
 import Skills from "./components/screen/skills/Skills";
 
 export default function Home() {
@@ -21,7 +21,7 @@ export default function Home() {
         <Goal />
         <Works />
         <Skills />
-        {/* <Contact /> */}
+        <ContactSizingUp />
       </SparklingBackground>
     </>
   );

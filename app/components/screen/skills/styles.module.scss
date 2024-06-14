@@ -4,21 +4,25 @@
   align-items: center;
 }
 
-.section {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+.skills {
+  margin-bottom: 200px;
 
-  .stickyContainer {
-    position: relative;
-    height: 100%;
-    overflow-y: scroll;
+  .section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 
-    .subTitle {
-      height: min-content;
-      position: sticky;
-      top: 0;
-      left: 0;
+    .stickyContainer {
+      position: relative;
+      height: 100%;
+      overflow-y: scroll;
+
+      .subTitle {
+        height: min-content;
+        position: sticky;
+        top: 0;
+        left: 0;
+      }
     }
   }
 }
