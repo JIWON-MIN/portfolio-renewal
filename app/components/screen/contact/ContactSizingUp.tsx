@@ -1,33 +1,32 @@
 "use client";
 
 import { useEffect } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Contact from "./Contact";
 import styles from "./styles.module.scss";
 
 export default function ContactSizingUp() {
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    const animation = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#sizingUpBg",
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true,
-      },
+    const target = document.querySelector("#sizingUpContent");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add(styles.sizeup);
+          observer.unobserve(entry.target); // Once animated, stop observing
+        }
+      });
     });
 
-    animation.from("#sizingUpContent", { transform: "scale(0.2)" }).to("#sizingUp", { transform: "scale(1)" });
+    if (target) {
+      observer.observe(target);
+    }
 
-    () => animation.kill();
+    return () => {
+      if (target) {
+        observer.unobserve(target);
+      }
+    };
   }, []);
 
-  return (
-    // <div className={styles.contactSizingUp} id="sizingUpBg">
-    // <div className={styles.contentWrapper}>
-    <Contact id="sizingUpContent" />
-    // </div>
-    // </div>
-  );
+  return <Contact id="sizingUpContent" />;
 }

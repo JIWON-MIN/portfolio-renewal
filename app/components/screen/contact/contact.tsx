@@ -1,6 +1,6 @@
 import Image from "next/image";
 import LAPTOPIMG from "../../assets/big_laptop.png";
-import ContentSection from "../../module/ContentSection";
+// import ContentSection from "../../module/ContentSection";
 import styles from "./styles.module.scss";
 import Typo from "../../core/Typo";
 

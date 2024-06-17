@@ -35,20 +35,22 @@
   }
 }
 
-.contactSizingUp {
-  min-height: 3000px;
-  width: 100%;
-  position: relative;
+.sizeup {
+  animation-name: sizeup;
+  // animation-delay: 6s;
+  animation-duration: 3s;
+  animation-duration: leaner;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
 
-  .contentWrapper {
-    width: 1440px;
-    position: sticky;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  @keyframes sizeup {
+    0% {
+      transform: scale(0.2);
+    }
+
+    100% {
+      transform: scale(1);
+    }
   }
 }

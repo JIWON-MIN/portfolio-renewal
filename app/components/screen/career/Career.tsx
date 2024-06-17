@@ -5,7 +5,7 @@ import styles from "./styles.module.scss";
 const TIMELINE_CONTENTS = [
   { date: "2019.07 ~ 2022.08", title: "에듀플렉스 인천삼산점", desc: "중 · 고등학생 영어 · 수학 강의" },
   { date: "2019.03 ~ 2023.07", title: "숭실대학교 소프트웨어학부 졸업 (공학인증 수료)" },
-  { date: "2022.07", title: "정보처리기사 취득" },
+  { date: "2022.04 ~ 2022.09", title: "TOEIC 920점 및 정보처리기사 취득" },
   {
     date: "2022.09 ~",
     title: "파운트 플랫폼팀 프론트엔드 엔지니어",
