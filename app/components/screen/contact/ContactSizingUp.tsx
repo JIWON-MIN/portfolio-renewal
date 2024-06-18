@@ -3,10 +3,11 @@
 import { useEffect } from "react";
 import Contact from "./Contact";
 import styles from "./styles.module.scss";
+import { MENU_ID } from "../../constant/common";
 
 export default function ContactSizingUp() {
   useEffect(() => {
-    const target = document.querySelector("#sizingUpContent");
+    const target = document.querySelector(`#${MENU_ID["CONTACT"]}`);
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -28,5 +29,5 @@ export default function ContactSizingUp() {
     };
   }, []);
 
-  return <Contact id="sizingUpContent" />;
+  return <Contact id={MENU_ID["CONTACT"]} />;
 }

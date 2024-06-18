@@ -11,20 +11,20 @@ export default function LandingFadeOut() {
     gsap.registerPlugin(ScrollTrigger);
     const animation = gsap.timeline({
       scrollTrigger: {
-        trigger: "#fadeOut",
+        trigger: "#fade-out",
         start: "top center",
         end: "bottom bottom",
         scrub: true,
       },
     });
 
-    animation.from("#fadeOut", { opacity: 1 }).to("#fadeOut", { opacity: 0 });
+    animation.from("#fade-out", { opacity: 1 }).to("#fade-out", { opacity: 0 });
 
     () => animation.kill();
   }, []);
 
   return (
-    <div className={styles.landingFadeOut} id="fadeOut">
+    <div className={styles.landingFadeOut} id="fade-out">
       <div className={styles.content}>
         <Landing />
       </div>

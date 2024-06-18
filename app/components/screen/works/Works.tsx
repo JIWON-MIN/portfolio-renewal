@@ -1,13 +1,15 @@
-import Typo from "../../core/Typo";
-import ContentSection from "../../module/ContentSection";
+"use client";
+import { useEffect } from "react";
 import WorksOpening from "./WorksOpening";
+import Work from "./Work";
+import styles from "./styles.module.scss";
 
 import DokitImage from "../../assets/dokit.png";
 import CosmosImage from "../../assets/cosmos.png";
 import BrandsiteImage from "../../assets/brandsite.png";
 import FoppyImage from "../../assets/foppy.png";
 import PortfolioImage from "../../assets/portfolio.png";
-import Work from "./Work";
+import { MENU_ID } from "../../constant/common";
 
 const WORK_LIST = [
   {
@@ -101,12 +103,43 @@ const WORK_LIST = [
 ];
 
 export default function Works() {
+  useEffect(() => {
+    const sticky = document.getElementById("works");
+    const stickyParent = document.getElementById("works-container");
+
+    if (sticky && stickyParent) {
+      // 수평 폭에 매핑해야 하는 실제 스크롤 높이를 찾으려면, stickyparent의 높이 - sticky의 높이
+      const scrollWidth = sticky.scrollWidth;
+      const verticalScrollHeight = stickyParent.getBoundingClientRect().height - sticky.getBoundingClientRect().height;
+
+      //Scroll function
+      const horizontalScroll = () => {
+        //Checking whether the sticky element has entered into view or not
+        const stickyPosition = sticky.getBoundingClientRect().top;
+        if (stickyPosition > 1) {
+          return;
+        } else {
+          const scrolled = stickyParent.getBoundingClientRect().top; //how much is scrolled?
+          sticky.scrollLeft = (scrollWidth / verticalScrollHeight) * -scrolled * 0.85;
+          // console.log(sticky.scrollLeft);
+        }
+      };
+
+      // Adding scroll event listener
+      document.addEventListener("scroll", horizontalScroll);
+    }
+  }, []);
+
   return (
-    <div>
-      <WorksOpening />
-      {WORK_LIST.map((work) => (
-        <Work work={work} key={work.title} />
-      ))}
+    <div className={styles.worksContainer} id={MENU_ID["WORK"]}>
+      <div className={styles.works} id="works">
+        <div className={styles.horizontal}>
+          <WorksOpening />
+          {WORK_LIST.map((work) => (
+            <Work work={work} key={work.title} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

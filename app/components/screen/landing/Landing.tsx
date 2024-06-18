@@ -22,7 +22,7 @@ export default function Landing() {
         <Image src={BusanJpeg} alt="busan" fill style={{ objectFit: "cover" }} />
         <div className={styles.overlay} />
         <Typo variant="h3" color="white" className={styles.text}>
-          학습과 응용을 사랑하는
+          끊임없는 학습과 응용, 배려와 협업을 실천하는
           <br />
           프론트엔드 개발자{" "}
           <span className={styles.highlight}>

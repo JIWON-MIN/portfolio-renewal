@@ -5,12 +5,14 @@ import Icon from "@mui/material/Icon";
 import CopyIcon from "@mui/icons-material/ContentCopyRounded";
 import ArrowIcon from "@mui/icons-material/NorthEastRounded";
 import styles from "./styles.module.scss";
+import Alert from "@mui/material/Alert";
+import { SetStateAction, useEffect, useState } from "react";
+import { clx, copyStr } from "../../func/common";
 
 const SHORTCUTS: { title: string; link: string }[] = [
-  { title: "Velog", link: "/" },
-  { title: "Github", link: "/" },
-  { title: "Wanted", link: "/" },
-  { title: "LinkedIn", link: "/" },
+  { title: "Velog", link: "https://velog.io/@loopy" },
+  { title: "Github", link: "https://github.com/JIWON-MIN" },
+  { title: "LinkedIn", link: "https://www.linkedin.com/in/jiwon-min-67b3372b2/" },
 ];
 
 const EMAIL = "z_zzz7@naver.com";
@@ -19,8 +21,12 @@ const LAST_UPDATED = "2024.03.27";
 const navLi = () => {
   return SHORTCUTS.map((shortcut) => {
     const { title, link } = shortcut;
+    const onClickLink = (link: string) => {
+      window.open(link, "_blank");
+    };
+
     return (
-      <div key={title} className={styles.navLi}>
+      <div key={title} className={styles.navLi} onClick={() => onClickLink(link)}>
         <Typo variant="t1" color="gray1">
           {title}
         </Typo>
@@ -30,9 +36,13 @@ const navLi = () => {
   });
 };
 
-const NavFooter = () => {
+interface NavFooterProps {
+  setShowAlert: React.Dispatch<React.SetStateAction<boolean>>;
+}
+const NavFooter = ({ setShowAlert }: NavFooterProps) => {
   const onClickEmail = () => {
-    console.log("onClickEmail");
+    setShowAlert(true);
+    copyStr("z_zzz7@naver.com");
   };
 
   return (
@@ -52,11 +62,27 @@ const NavFooter = () => {
 };
 
 export default function LandingNav() {
-  return (
-    <div className={styles.landingNav}>
-      <div className={styles.navList}>{navLi()}</div>
+  const [showAlert, setShowAlert] = useState(false);
 
-      <NavFooter />
-    </div>
+  useEffect(() => {
+    if (showAlert) {
+      setTimeout(() => {
+        setShowAlert(false);
+      }, 5000);
+    }
+  }, [showAlert]);
+
+  return (
+    <>
+      <div className={styles.landingNav}>
+        <div className={styles.navList}>{navLi()}</div>
+        <NavFooter setShowAlert={setShowAlert} />
+      </div>
+      {/* {showAlert && ( */}
+      <Alert severity="success" className={clx(styles.alert, showAlert ? styles.showAlert : styles.hideAlert)}>
+        Email has been copied to clipboard.
+      </Alert>
+      {/* )} */}
+    </>
   );
 }

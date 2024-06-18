@@ -6,10 +6,11 @@ interface TypoProps {
   className?: string;
   bold?: boolean;
   children: React.ReactNode;
+  onClick?: () => void;
 }
 
 export default function Typo(props: TypoProps) {
-  const { variant = "t2", color = "black", display = "inline", style, bold, className, children } = props;
+  const { variant = "t2", color = "black", display = "inline", style, bold, className, children, onClick } = props;
   // 18 24 30 36
   // 48 60 120
   const renderSize = (variant: string) => {
@@ -56,6 +57,7 @@ export default function Typo(props: TypoProps) {
         ...style,
       }}
       className={className}
+      onClick={onClick}
     >
       {children}
     </div>

@@ -1,3 +1,4 @@
+import { MENU_ID } from "../../constant/common";
 import Typo from "../../core/Typo";
 import ContentSection from "../../module/ContentSection";
 import { EXPERIENCED, GOOD_AT } from "./skillList";
@@ -20,18 +21,16 @@ export default function Skills() {
   return (
     <>
       {/* opening */}
-      <ContentSection className={styles.opening}>
+      <ContentSection className={styles.opening} id={MENU_ID["SKILLS"]}>
         <Typo variant="120px" bold color="white">
           So, What Can I Do?
         </Typo>
       </ContentSection>
       <div className={styles.skills}>
         <div className={styles.section}>
-          <div className={styles.stickyContainer}>
-            <Typo variant="h2" color="white" bold className={styles.subTitle}>
-              I'm Good At
-            </Typo>
-          </div>
+          <Typo variant="h2" color="white" bold className={styles.subTitle}>
+            I'm Good At
+          </Typo>
           <div className={styles.list}>
             {GOOD_AT.map((s) => (
               <SkillEl key={s.title} title={s.title} icon={s.icon} />
@@ -39,7 +38,7 @@ export default function Skills() {
           </div>
         </div>
 
-        <div className={styles.section}>
+        <div className={styles.section} style={{ marginTop: "60px" }}>
           <Typo variant="h2" color="white" bold className={styles.subTitle}>
             I've experienced
           </Typo>
